@@ -2,10 +2,12 @@
 //  CYLTabBarControllerConfig.m
 //  CYLTabBarController
 //
-//  v1.7.0 Created by 微博@iOS程序犭袁 ( http://weibo.com/luohanchenyilong/ ) on 10/20/15.
+//  v1.13.1 Created by 微博@iOS程序犭袁 ( http://weibo.com/luohanchenyilong/ ) on 10/20/15.
 //  Copyright © 2015 https://github.com/ChenYilong . All rights reserved.
 //
 #import "CYLTabBarControllerConfig.h"
+
+static CGFloat const CYLTabBarControllerHeight = 40.f;
 
 @interface CYLBaseNavigationController : UINavigationController
 @end
@@ -27,7 +29,7 @@
 #import "CYLMineViewController.h"
 #import "CYLSameCityViewController.h"
 
-@interface CYLTabBarControllerConfig ()
+@interface CYLTabBarControllerConfig ()<UITabBarControllerDelegate>
 
 @property (nonatomic, readwrite, strong) CYLTabBarController *tabBarController;
 
@@ -42,8 +44,19 @@
  */
 - (CYLTabBarController *)tabBarController {
     if (_tabBarController == nil) {
+        /**
+         * 以下两行代码目的在于手动设置让TabBarItem只显示图标，不显示文字，并让图标垂直居中。
+         * 等效于在 `-tabBarItemsAttributesForController` 方法中不传 `CYLTabBarItemTitle` 字段。
+         * 更推荐后一种做法。
+         */
+        UIEdgeInsets imageInsets = UIEdgeInsetsZero;//UIEdgeInsetsMake(4.5, 0, -4.5, 0);
+        UIOffset titlePositionAdjustment = UIOffsetZero;//UIOffsetMake(0, MAXFLOAT);
+        
         CYLTabBarController *tabBarController = [CYLTabBarController tabBarControllerWithViewControllers:self.viewControllers
-                                                                                   tabBarItemsAttributes:self.tabBarItemsAttributesForController];
+                                                                                   tabBarItemsAttributes:self.tabBarItemsAttributesForController
+                                                                                             imageInsets:imageInsets
+                                                                                 titlePositionAdjustment:titlePositionAdjustment];
+        
         [self customizeTabBarAppearance:tabBarController];
         _tabBarController = tabBarController;
     }
@@ -67,13 +80,7 @@
     UIViewController *fourthNavigationController = [[CYLBaseNavigationController alloc]
                                                     initWithRootViewController:fourthViewController];
     
-    /**
-     * 以下两行代码目的在于手动设置让TabBarItem只显示图标，不显示文字，并让图标垂直居中。
-     * 等效于在 `-tabBarItemsAttributesForController` 方法中不传 `CYLTabBarItemTitle` 字段。
-     * 更推荐后一种做法。
-     */
-    //tabBarController.imageInsets = UIEdgeInsetsMake(4.5, 0, -4.5, 0);
-    //tabBarController.titlePositionAdjustment = UIOffsetMake(0, MAXFLOAT);
+  
     NSArray *viewControllers = @[
                                  firstNavigationController,
                                  secondNavigationController,
@@ -86,8 +93,8 @@
 - (NSArray *)tabBarItemsAttributesForController {
     NSDictionary *firstTabBarItemsAttributes = @{
 //                                                 CYLTabBarItemTitle : @"首页",
-                                                 CYLTabBarItemImage : @"home_normal",
-                                                 CYLTabBarItemSelectedImage : @"home_highlight",
+                                                 CYLTabBarItemImage : @"home_normal",  /* NSString and UIImage are supported*/
+                                                 CYLTabBarItemSelectedImage : @"home_highlight", /* NSString and UIImage are supported*/
                                                  };
     NSDictionary *secondTabBarItemsAttributes = @{
 //                                                  CYLTabBarItemTitle : @"同城",
@@ -120,7 +127,7 @@
 #warning CUSTOMIZE YOUR TABBAR APPEARANCE
     // Customize UITabBar height
     // 自定义 TabBar 高度
-     tabBarController.tabBarHeight = 40.f;
+//     tabBarController.tabBarHeight = CYLTabBarControllerHeight;
     
     // set the text color for unselected state
     // 普通状态下的文字属性
@@ -156,8 +163,8 @@
     
     // set the bar background image
     // 设置背景图片
-    // UITabBar *tabBarAppearance = [UITabBar appearance];
-    // [tabBarAppearance setBackgroundImage:[UIImage imageNamed:@"tabbar_background"]];
+//     UITabBar *tabBarAppearance = [UITabBar appearance];
+//     [tabBarAppearance setBackgroundImage:[UIImage imageNamed:@"tab_bar"]];
     
     // remove the bar system shadow image
     // 去除 TabBar 自带的顶部阴影
@@ -182,13 +189,12 @@
 
 - (void)customizeTabBarSelectionIndicatorImage {
     ///Get initialized TabBar Height if exists, otherwise get Default TabBar Height.
-    UITabBarController *tabBarController = [self cyl_tabBarController] ?: [[UITabBarController alloc] init];
-    CGFloat tabBarHeight = tabBarController.tabBar.frame.size.height;
+    CGFloat tabBarHeight = CYLTabBarControllerHeight;
     CGSize selectionIndicatorImageSize = CGSizeMake(CYLTabBarItemWidth, tabBarHeight);
     //Get initialized TabBar if exists.
     UITabBar *tabBar = [self cyl_tabBarController].tabBar ?: [UITabBar appearance];
     [tabBar setSelectionIndicatorImage:
-     [[self class] imageWithColor:[UIColor redColor]
+     [[self class] imageWithColor:[UIColor yellowColor]
                              size:selectionIndicatorImageSize]];
 }
 
@@ -207,5 +213,7 @@
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
+
 
 @end

@@ -20,13 +20,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Example/CYLTabBarControllerConfig.m"
-            timestampString = "483515686.144405"
+            timestampString = "519049145.117056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
             landmarkName = "+imageWithColor:size:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -36,29 +36,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CYLTabBarController/CYLTabBarController.m"
-            timestampString = "483515235.928086"
+            timestampString = "519151512.189774"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "-dealloc"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CYLTabBarController/CYLTabBarController.m"
-            timestampString = "483515235.928086"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
             landmarkName = "-setViewControllers:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -68,13 +52,77 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CYLTabBarController/CYLTabBarController.m"
-            timestampString = "483515235.928086"
+            timestampString = "519151512.189913"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
             landmarkName = "-setViewControllers:"
-            landmarkType = "5">
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CYLTabBarController setViewControllers:]"
+                  moduleName = "CYLTabBarController"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chenyilong/Documents/Git/%E7%AC%AC%E4%B8%89%E6%96%B9/CYLTabBarController/CYLTabBarController/CYLTabBarController.m"
+                  timestampString = "519151624.53257"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "210"
+                  endingLineNumber = "210"
+                  offsetFromSymbolStart = "1380">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CYLTabBarController setViewControllers:]"
+                  moduleName = "CYLTabBarController"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chenyilong/Documents/Git/%E7%AC%AC%E4%B8%89%E6%96%B9/CYLTabBarController/CYLTabBarController/CYLTabBarController.m"
+                  timestampString = "519151624.534434"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "210"
+                  endingLineNumber = "210"
+                  offsetFromSymbolStart = "1395">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CYLTabBarController/CYLTabBarController.m"
+            timestampString = "519151512.190002"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
+            landmarkName = "-getImageFromImageInfo:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CYLTabBarController/UIControl+CYLTabBarControllerExtention.m"
+            timestampString = "519152834.205129"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "-cyl_setShowTabBadgePoint:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -84,13 +132,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CYLTabBarController/CYLPlusButton.m"
-            timestampString = "483515066.789888"
+            timestampString = "519152834.2052"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "+addSelectViewControllerTarget:"
-            landmarkType = "5">
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "-plusChildViewControllerButtonClicked:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -99,14 +147,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CYLTabBarController/CYLPlusButton.m"
-            timestampString = "483515066.789888"
+            filePath = "Example/AppDelegate.m"
+            timestampString = "519152834.205264"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "+addSelectViewControllerTarget:"
-            landmarkType = "5">
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "-tabBarController:shouldSelectViewController:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

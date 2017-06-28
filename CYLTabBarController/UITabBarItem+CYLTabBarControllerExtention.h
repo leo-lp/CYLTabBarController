@@ -1,5 +1,5 @@
 //
-//  CYLMineViewController.h
+//  CYLTabBarController.m
 //  CYLTabBarController
 //
 //  v1.13.1 Created by 微博@iOS程序犭袁 ( http://weibo.com/luohanchenyilong/ ) on 10/20/15.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CYLMineViewController : UITableViewController
+@interface UITabBarItem (CYLTabBarControllerExtention)
 
-- (void)testPush;
+@property (nonatomic, readonly) UIControl *cyl_tabButton;
 
 @end
